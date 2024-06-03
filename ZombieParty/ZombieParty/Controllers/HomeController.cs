@@ -20,6 +20,8 @@ namespace ZombieParty.Controllers
 
         public IActionResult Privacy()
         {
+            
+            
             return View();
         }
 
