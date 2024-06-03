@@ -1,7 +1,7 @@
 ﻿@model Zombietype
 <form asp-controller="ZombieType" asp-action="Create" method="post">
     <div class="border p-3">
-        <div class="text-danger"></div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group row">
             <h2 class="text-info pl-3">Zombie Type</h2>
             <hr />
@@ -14,7 +14,9 @@
                         <label asp-for="TypeName">Type Name</label>
                     </div>
                     <div class="col-8">
-                        TYPENAME
+                        <input asp-for="TypeName" class="form-control" />
+                        <span asp-validation-for="TypeName" class="text-danger"></span>
+                        
                     </div>
                 </div>
 
@@ -34,3 +36,8 @@
             </div>
         </div>
 </form>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
